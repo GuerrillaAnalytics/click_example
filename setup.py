@@ -21,7 +21,7 @@ setup(
     install_requires=dependencies,
     entry_points={
         'console_scripts': [
-            'click_example = click_exaple.cli:main',
+            'click_example = click_example.cli:main',
         ],
     },
     classifiers=[
