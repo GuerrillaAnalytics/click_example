@@ -6,8 +6,8 @@ import click
 def cloudflare(ctx):
     pass
 
-
 @cloudflare.group('zone')
+@click.pass_context
 def cloudflare_zone():
     pass
 
