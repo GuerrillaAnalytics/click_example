@@ -1,14 +1,79 @@
 import click
 
 
-@click.command()
-@click.option('--as-cowboy', '-c', is_flag=True, help='Greet as a cowboy.')
-@click.argument('name', default='world', required=False)
+@click.group()
 @click.version_option()
-def cli(name, as_cowboy):
-    """A working example of nested Python Click commands"""
-    greet = 'Howdy' if as_cowboy else 'Hello'
-    click.echo('{0}, {1}.'.format(greet, name))
+def cli():
+    pass
+
+
+@cli.group()
+@click.pass_context
+def cloudflare(ctx):
+    pass
+
+
+@cloudflare.group('zone')
+def cloudflare_zone():
+    pass
+
+
+@cloudflare_zone.command('add')
+@click.option('--jumpstart', '-j', default=True)
+@click.option('--organization', '-o', default='')
+@click.argument('url')
+@click.pass_obj
+def cloudflare_zone_add(ctx, url, jumpstart, organization):
+    pass
+
+
+@cloudflare.group('record')
+def cloudflare_record():
+    pass
+
+
+@cloudflare_record.command('add')
+@click.option('--ttl', '-t')
+@click.argument('domain')
+@click.argument('name')
+@click.argument('type')
+@click.argument('content')
+@click.pass_obj
+def cloudflare_record_add(ctx, domain, name, type, content, ttl):
+    pass
+
+
+@cloudflare_record.command('edit')
+@click.option('--ttl', '-t')
+@click.argument('domain')
+@click.argument('name')
+@click.argument('type')
+@click.argument('content')
+@click.pass_obj
+def cloudflare_record_edit(ctx, domain):
+    pass
+
+
+# uptime part
+@cli.group()
+@click.pass_context
+def uptimerobot(ctx):
+    pass
+
+
+@uptimerobot.command('add')
+@click.option('--alert', '-a', default=True)
+@click.argument('name')
+@click.argument('url')
+@click.pass_obj
+def uptimerobot_add(ctx, name, url, alert):
+    pass
+
+
+@uptimerobot.command('delete')
+@click.argument('names', nargs=-1, required=True)
+@click.pass_obj
+def uptimerobot_delete(ctx, names):
     pass
 
 
