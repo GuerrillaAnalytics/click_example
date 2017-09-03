@@ -1,10 +1,10 @@
 import click
 
-
 @click.group()
 @click.pass_context
 def cloudflare(ctx):
     pass
+
 
 @cloudflare.group('zone')
 @click.pass_context
