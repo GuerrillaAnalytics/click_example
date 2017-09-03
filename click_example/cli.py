@@ -1,15 +1,27 @@
+"""
+Based on
+https://stackoverflow.com/questions/34643620/
+how-can-i-split-my-click-commands-each-with-a-set-of-sub-commands-into-multipl
+
+"""
 import click
+import sys
+import os.path
 
 
-@click.command()
-@click.option('--as-cowboy', '-c', is_flag=True, help='Greet as a cowboy.')
-@click.argument('name', default='world', required=False)
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from click_example.commands.cloudflare_grp.cmd import cloudflare
+from click_example.commands.uptime_grp.cmd import uptimerobot
+
+
+@click.group()
 @click.version_option()
-def cli(name, as_cowboy):
-    """A working example of nested Python Click commands"""
-    greet = 'Howdy' if as_cowboy else 'Hello'
-    click.echo('{0}, {1}.'.format(greet, name))
+def cli():
     pass
+
+
+cli.add_command(cloudflare)
+cli.add_command(uptimerobot)
 
 
 if __name__ == '__main__':

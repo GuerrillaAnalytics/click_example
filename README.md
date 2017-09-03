@@ -1,6 +1,8 @@
 # click_example
 
-A working example of nested Python Click commands
+A working example of nested Python Click commands. Based on two sources:
+* [Building a Command Line Tool with Click](http://nvie.com/posts/writing-a-cli-in-python-in-under-60-seconds/)
+* This Stack Overflow (conversation)[https://stackoverflow.com/questions/34643620/how-can-i-split-my-click-commands-each-with-a-set-of-sub-commands-into-multipl]
 
 
 # Installation
@@ -12,10 +14,4 @@ Simply run:
 
     $ pipsi install .
 
-
-# Usage
-
-To use it:
-
-    $ click_example --help
-
+Also make sure you have a Python 3.4 and Python 3.5 environment to pass all tox tests
