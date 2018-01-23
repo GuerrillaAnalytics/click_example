@@ -10,7 +10,7 @@ import os.path
 
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from click_example.commands.command1_grp.cmd import cloudflare
+from click_example.commands.command1_grp.cmd import command1
 from click_example.commands.uptime_grp.cmd import uptimerobot
 
 
@@ -20,7 +20,7 @@ def cli():
     pass
 
 
-cli.add_command(cloudflare)
+cli.add_command(command1)
 cli.add_command(uptimerobot)
 
 
