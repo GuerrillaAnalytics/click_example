@@ -7,6 +7,7 @@ def command1(ctx):
     pass
 
 
+# for each subgroup, define another group
 @command1.group('zone')
 @click.pass_context
 def command1_zone():

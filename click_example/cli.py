@@ -20,6 +20,8 @@ def cli():
     pass
 
 
+# add each group here
+# declare the group is package and define function with same name
 cli.add_command(command1)
 cli.add_command(command2)
 
