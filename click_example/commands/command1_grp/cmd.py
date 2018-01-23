@@ -9,16 +9,16 @@ def command1(ctx):
 
 @command1.group('zone')
 @click.pass_context
-def cloudflare_zone():
+def command1_zone():
     pass
 
 
-@cloudflare_zone.command('add')
+@command1_zone.command('add')
 @click.option('--jumpstart', '-j', default=True)
 @click.option('--organization', '-o', default='')
 @click.argument('url')
 @click.pass_obj
-def cloudflare_zone_add(ctx, url, jumpstart, organization):
+def command1_zone_add(ctx, url, jumpstart, organization):
     pass
 
 
