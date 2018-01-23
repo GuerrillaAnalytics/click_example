@@ -3,21 +3,21 @@ import click
 
 @click.group()
 @click.pass_context
-def uptimerobot(ctx):
+def command2(ctx):
     pass
 
 
-@uptimerobot.command('add')
+@command2.command('add')
 @click.option('--alert', '-a', default=True)
 @click.argument('name')
 @click.argument('url')
 @click.pass_obj
-def uptimerobot_add(ctx, name, url, alert):
+def command2_add(ctx, name, url, alert):
     pass
 
 
-@uptimerobot.command('delete')
+@command2.command('delete')
 @click.argument('names', nargs=-1, required=True)
 @click.pass_obj
-def uptimerobot_delete(ctx, names):
+def command2_delete(ctx, names):
     pass
