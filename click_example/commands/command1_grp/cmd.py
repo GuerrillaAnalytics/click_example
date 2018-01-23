@@ -25,11 +25,11 @@ def command1_zone_add(ctx, url, jumpstart, organization):
 ################################################################################
 
 @command1.group('record')
-def cloudflare_record():
+def command1_record():
     pass
 
 
-@cloudflare_record.command('add')
+@command1_record.command('add')
 @click.option('--ttl', '-t')
 @click.argument('domain')
 @click.argument('name')
@@ -40,12 +40,12 @@ def cloudflare_record_add(ctx, domain, name, type, content, ttl):
     pass
 
 
-@cloudflare_record.command('edit')
+@command1_record.command('edit')
 @click.option('--ttl', '-t')
 @click.argument('domain')
 @click.argument('name')
 @click.argument('type')
 @click.argument('content')
 @click.pass_obj
-def cloudflare_record_edit(ctx, domain):
+def command1_record_edit(ctx, domain):
     pass
