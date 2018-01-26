@@ -10,13 +10,15 @@ def command1(ctx):
     pass
 
 
-# for each subgroup, define another group
+# for each subgroup, define another group as follows
 @command1.group('zone')
 @click.pass_context
 def command1_zone():
     pass
 
 
+# Now define the actual commands within that subgroup
+# arguments are positional, options are not
 @command1_zone.command('add')
 @click.option('--jumpstart', '-j', default=True)
 @click.option('--organization', '-o', default='')
@@ -36,11 +38,11 @@ def command1_record():
 @command1_record.command('add')
 @click.option('--ttl', '-t')
 @click.argument('domain')
-@click.argument('name')
+@click.argument('name', type=click.STRING, nargs=1)
 @click.argument('type')
 @click.argument('content')
 @click.pass_obj
-def cloudflare_record_add(ctx, domain, name, type, content, ttl):
+def command1_record_add(ctx, domain, name, type, content, ttl):
     pass
 
 
@@ -51,5 +53,5 @@ def cloudflare_record_add(ctx, domain, name, type, content, ttl):
 @click.argument('type')
 @click.argument('content')
 @click.pass_obj
-def command1_record_edit(ctx, domain):
+def command1_record_edit(ctx, domain, name, type, content):
     pass
