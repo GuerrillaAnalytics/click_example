@@ -1,3 +1,6 @@
+"""
+Click command group called command2.
+"""
 import click
 
 

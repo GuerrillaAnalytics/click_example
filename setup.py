@@ -1,5 +1,5 @@
 """
-A working example of nested Python Click commands
+A working example of nested Python Click commands.
 """
 from setuptools import find_packages, setup
 
@@ -7,7 +7,7 @@ dependencies = ['click']
 
 setup(
     name='click_example',
-    version='0.1.0',
+    version='0.3.0',
     url='https://github.com/guerrillaAnalytics/click_example',
     license='BSD',
     author='Enda Ridge',

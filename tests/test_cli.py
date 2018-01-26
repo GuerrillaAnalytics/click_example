@@ -1,6 +1,10 @@
-import pytest
+"""
+Example Click tests.
+
+"""
 from click.testing import CliRunner
 from click_example import cli
+import pytest
 
 
 @pytest.fixture
@@ -14,6 +18,7 @@ def test_cli(runner):
     assert not result.exception
     # assert result.output.strip() == 'Hello, world.'
     print(result.output.strip())
+
 #
 #
 # def test_cli_with_option(runner):

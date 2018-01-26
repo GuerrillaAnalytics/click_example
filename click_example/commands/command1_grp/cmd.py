@@ -1,3 +1,6 @@
+"""
+Example Click command group called command1.
+"""
 import click
 
 
@@ -23,7 +26,7 @@ def command1_zone_add(ctx, url, jumpstart, organization):
     pass
 
 
-################################################################################
+############################################################################
 
 @command1.group('record')
 def command1_record():
