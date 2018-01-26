@@ -1,5 +1,5 @@
 """
-A working example of nested Python Click commands
+A working example of nested Python Click commands.
 """
 from setuptools import find_packages, setup
 
